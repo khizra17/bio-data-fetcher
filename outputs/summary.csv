@@ -1,0 +1,5 @@
+id,status,source,path,description,length,error
+ENSG00000139618,downloaded,src.fetchers.ensembl_fetcher,C:\Projects\bio-data-fetcher\outputs\ENSG00000139618.fasta,ENSG00000139618,85183.0,
+sp|P01308|INS_HUMAN,downloaded,src.fetchers.uniprot_fetcher,C:\Projects\bio-data-fetcher\outputs\P01308.fasta,sp|P01308|INS_HUMAN Insulin OS=Homo sapiens OX=9606 GN=INS PE=1 SV=1,110.0,
+NC_000001.11,error,,,,,All fetchers failed
+NM_001126112,error,,,,,All fetchers failed
