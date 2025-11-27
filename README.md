@@ -1,6 +1,6 @@
 Bio Data Fetcher – Full Automation Suite
 
-A professional, production-grade automation suite for fetching biological sequence data from:
+A professional, production-grade automation suite for fetching biological sequence data from multiple authoritative sources:
 
 NCBI
 
@@ -8,48 +8,53 @@ Ensembl
 
 UniProt
 
-The suite automatically:
+This toolkit automates the complete workflow:
 
-✔ Fetches raw sequence data
-✔ Parses & cleans it
+✔ Fetches biological sequences
+✔ Cleans & parses data
 ✔ Saves FASTA + summary CSV
-✔ Runs standalone from CLI
-✔ Supports multiple workers
-✔ Includes clean modular architecture
+✔ Runs as a standalone CLI tool
+✔ Supports parallel workers
+✔ Built with clean, modular architecture
 
-Perfect for research workflows, automation pipelines, and bioinformatics projects.
+Perfect for researchers, bioinformatics engineers, automation pipelines, and academic workflows.
 
 🚀 Features
-Data Fetchers
+🔬 Multi-Source Data Fetchers
 
-Each fetcher is fully modular and independently testable:
+Each fetcher is fully modular, independently testable, and follows a unified interface:
 
-NCBI Fetcher – sequence retrieval via IDs (GenBank, RefSeq, etc.)
+NCBI Fetcher
+Retrieves GenBank/RefSeq sequences using accession IDs.
 
-Ensembl Fetcher – gene/transcript/protein FASTA retrieval
+Ensembl Fetcher
+Fetches gene, transcript, or protein FASTA files.
 
-UniProt Fetcher – SwissProt/UniProtKB sequences
+UniProt Fetcher
+Retrieves curated SwissProt/UniProtKB protein sequences.
 
-Pipeline Automation
+⚙️ Automated Pipeline
 
-The pipeline:
+The unified pipeline:
 
 Processes any number of IDs
 
-Tries all fetchers automatically
+Automatically tries all fetchers for each ID
 
-Saves ALL results to outputs/
+Saves FASTA outputs into /outputs
 
-Produces a clean summary CSV
+Generates a clean summary.csv report
 
-CLI Support
+Runs with multi-threading (--workers)
 
-Run it like:
+💻 Command Line Interface (CLI)
+
+Run via the CLI module:
 
 python -m src.cli --csv examples/sample_ids.csv --workers 4
 
 
-Or:
+Or use the full automation pipeline:
 
 python -m src.pipeline --input examples/sample_ids.csv --outdir outputs
 
@@ -68,7 +73,8 @@ bio-data-fetcher/
 ├── examples/
 │   └── sample_ids.csv
 │
-├── outputs/        ← created after pipeline run
+├── outputs/        ← created automatically after running the pipeline
+│
 ├── requirements.txt
 └── README.md
 
@@ -86,39 +92,37 @@ venv\Scripts\activate
 pip install -r requirements.txt
 
 ▶ How to Run
-Run using CLI module
+Using the CLI
 python -m src.cli --csv examples/sample_ids.csv --workers 2
 
-Run using the unified pipeline
+Using the unified pipeline
 python -m src.pipeline --input examples/sample_ids.csv --outdir outputs
 
-📊 Output Example
-
-summary.csv will contain:
-
+📊 Example Output (summary.csv)
 id	status	source	path	description	length	error
 ENSG00000139618	downloaded	Ensembl	outputs/...fasta	BRCA2 gene	85183	
 sp|P01308|INS	downloaded	UniProt	outputs/...fasta	Insulin protein	110	
 NM_001126112	error	—	—	—	—	All fetchers failed
-📌 Environment Variables (Optional)
+🔐 Optional Environment Variable
 
-Create .env:
+Create a .env file:
 
 NCBI_EMAIL=your_email@example.com
 
-🏗 Future Enhancements
+🏗 Planned Enhancements
 
-Add GENCODE fetcher
+GENCODE fetcher
 
-Add JSON metadata export
+JSON metadata export
 
-GUI control panel
+GUI dashboard / control panel
 
-Batch parallelization optimizations
+Faster batch parallelization
 
 🤝 Contributions
 
-Feel free to fork, submit issues, or contribute enhancements.
+Contributions, issues, and pull requests are welcome.
+Feel free to fork and enhance the automation suite.
 
 🧪 Author
 
